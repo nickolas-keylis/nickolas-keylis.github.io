@@ -1,6 +1,6 @@
 import { motion, useAnimation } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'; // Social icons
-import { SiJavascript, SiPython, SiReact, SiNodedotjs, SiTailwindcss } from 'react-icons/si'; // Programming language icons
+import { SiJavascript, SiPython, SiReact, SiNodedotjs, SiTailwindcss, SiRoblox, SiYoutube, SiInstagram } from 'react-icons/si'; // Programming language icons
 import { useEffect } from 'react';
 import './Home.css';
 
@@ -15,32 +15,39 @@ const Home = () => {
 
     const socialLinks = [
         { name: 'GitHub', url: 'https://github.com/jevidee', icon: <FaGithub className="w-8 h-8" /> },
-        { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: <FaLinkedin className="w-8 h-8" /> },
-        { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: <FaTwitter className="w-8 h-8" /> },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/nickolas-keylis-03113920b/', icon: <FaLinkedin className="w-8 h-8" /> },
+        { name: 'Roblox', url: 'https://www.roblox.com/users/1523078725/profile', icon: <SiRoblox className="w-8 h-8" /> },
+        { name: 'Youtube', url: 'https://www.youtube.com/@Jevidee', icon: <SiYoutube className="w-8 h-8" /> },
+        { name: 'Instagram', url: 'https://www.instagram.com/nickolas_keylis/?utm_source=qr', icon: <SiInstagram className="w-8 h-8" /> },
     ];
 
     const currentProjects = [
         {
-            name: 'Project 1',
-            description: 'A cool project I built using React and Tailwind CSS.',
-            url: 'https://github.com/yourusername/project1',
+            name: 'StormbBound',
+            description: 'Roblox MMO RPG',
+            url: 'nickolask.me',
         },
         {
-            name: 'Project 2',
-            description: 'A backend API built with Node.js and Express.',
-            url: 'https://github.com/yourusername/project2',
+            name: 'Aereno',
+            description: 'Redefine. Knowledge.',
+            url: 'nickolask.me',
         },
     ];
 
     const educationTimeline = [
         {
-            school: 'University of Example',
-            years: '2016 - 2020',
-            degree: 'Bachelor of Science in Computer Science',
+            school: 'University of California, Santa Cruz',
+            years: '2027 - ',
+            degree: 'Bacehlor in Computer Engineering (Expected) ',
         },
         {
-            school: 'Example High School',
-            years: '2012 - 2016',
+            school: 'Cabrillo College',
+            years: '2025-2027',
+            degree: 'Transfer',
+        },
+        {
+            school: 'Las Lomas High School',
+            years: '2021-2025',
             degree: 'High School Diploma',
         },
     ];
@@ -52,15 +59,15 @@ const Home = () => {
         const animateGradient = async () => {
             while (true) {
                 await controls.start({
-                    background: `linear-gradient(45deg, #0A0A0A, #1A1A1A, #2A2A2A)`,
+                    background: `linear-gradient(45deg, #00b4db, #0083b0, #00b4db)`,
                     transition: { duration: 10, ease: 'linear' },
                 });
                 await controls.start({
-                    background: `linear-gradient(45deg, #1A1A1A, #2A2A2A, #0A0A0A)`,
+                    background: `linear-gradient(45deg, #0083b0, #00b4db, #0083b0)`,
                     transition: { duration: 10, ease: 'linear' },
                 });
                 await controls.start({
-                    background: `linear-gradient(45deg, #2A2A2A, #0A0A0A, #1A1A1A)`,
+                    background: `linear-gradient(45deg, #00b4db, #0083b0, #00b4db)`,
                     transition: { duration: 10, ease: 'linear' },
                 });
             }
