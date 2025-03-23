@@ -24,7 +24,7 @@ const Home = () => {
     const currentProjects = [
         {
             name: 'StormbBound',
-            description: 'Roblox MMO RPG',
+            description: 'Roblox MMO',
             url: 'nickolask.me',
         },
         {
