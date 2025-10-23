@@ -1,4 +1,5 @@
 import React from "react";
+import Reveal from "./Reveal";
 
 export default function Projects() {
     const projects = [
@@ -19,7 +20,7 @@ export default function Projects() {
         {
             title: "TaskTrack",
             description:
-                "A productivity app to manage tasks across distributed teams with Firebase backend.",
+                "A productivity app for managing distributed teams using Firebase backend.",
             tech: ["React", "Firebase", "Redux"],
             link: "https://github.com/vadim/tasktrack",
         },
@@ -27,34 +28,37 @@ export default function Projects() {
 
     return (
         <section id="projects" className="py-20">
-            <h2 className="text-3xl font-bold mb-10 text-blue-400">Projects</h2>
+            <Reveal>
+                <h2 className="text-3xl font-bold mb-10 text-blue-400 text-center">
+                    Featured Projects
+                </h2>
+            </Reveal>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project) => (
-                    <div
-                        key={project.title}
-                        className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition"
-                    >
-                        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                        <p className="text-gray-400 mb-3">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {project.tech.map((t) => (
-                                <span
-                                    key={t}
-                                    className="text-sm bg-blue-500/20 text-blue-300 px-2 py-1 rounded"
-                                >
-                  {t}
-                </span>
-                            ))}
+                {projects.map((project, i) => (
+                    <Reveal key={project.title} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.1}>
+                        <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition">
+                            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                            <p className="text-gray-400 mb-3">{project.description}</p>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {project.tech.map((t) => (
+                                    <span
+                                        key={t}
+                                        className="text-sm bg-blue-500/20 text-blue-300 px-2 py-1 rounded"
+                                    >
+                    {t}
+                  </span>
+                                ))}
+                            </div>
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:underline"
+                            >
+                                View on GitHub →
+                            </a>
                         </div>
-                        <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-400 hover:underline"
-                        >
-                            View on GitHub →
-                        </a>
-                    </div>
+                    </Reveal>
                 ))}
             </div>
         </section>
